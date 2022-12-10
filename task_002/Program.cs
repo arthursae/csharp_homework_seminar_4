@@ -4,38 +4,35 @@
 // 82 -> 10
 // 9012 -> 12
 
-int CalculateSumOfDigits(string verifiedInput) 
+int CalculateSumOfDigits(string userInput) 
 {
-
+    int numOfDigits = userInput.Length;
+    int[] numbersArray = new int[numOfDigits];
+    int userInputUInt = Math.Abs(Convert.ToInt32(userInput));
     int sumOfDigits = 0;
+    
+    int i = 0;
 
-    foreach(char digitChar in verifiedInput) {
+    while (userInputUInt > 0) {
 
-        int digit = (int)Char.GetNumericValue(digitChar);
-        sumOfDigits += digit;
-
+        int num = userInputUInt % 10;
+        sumOfDigits += num;
+        userInputUInt = userInputUInt / 10;
+        i++;
     }
 
     return sumOfDigits;
 
 }
 
-bool CheckStringForNumericValues(string userInput)
+bool IsValidNumber(string stringToCheck)
 {
-    
-    foreach (char singleChar in userInput) {
 
-        int charToIntConverted = (int)Char.GetNumericValue(singleChar); // returns -1 if conversion fails
-        
-         if (charToIntConverted < 0) {
+    int x = 0;
 
-            return false;
-            
-        }
+    if (Int32.TryParse(stringToCheck, out x)) return true;
 
-    }
-
-    return true;
+    return false;
 
 }
 
@@ -45,7 +42,7 @@ string GetUserInputData(string message)
     Console.Write(message);
     string userInput = Console.ReadLine();
 
-    if (CheckStringForNumericValues(userInput)) {
+    if (IsValidNumber(userInput)) {
 
         return userInput;
  
