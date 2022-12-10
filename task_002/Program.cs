@@ -7,16 +7,16 @@
 int CalculateSumOfDigits(string userInput) 
 {
 
-    int userInputUInt = Math.Abs(Convert.ToInt32(userInput));
+    int userInputAbs = Math.Abs(Convert.ToInt32(userInput));
     int sumOfDigits = 0;
     
     int i = 0;
 
-    while (userInputUInt > 0) {
+    while (userInputAbs > 0) {
 
-        int num = userInputUInt % 10;
+        int num = userInputAbs % 10;
         sumOfDigits += num;
-        userInputUInt = userInputUInt / 10;
+        userInputAbs = userInputAbs / 10;
         i++;
     }
 
