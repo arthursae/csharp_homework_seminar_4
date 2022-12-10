@@ -80,26 +80,11 @@ int[] BuildArrayOfUserInputElements(int numberOfElements) {
 
 void OutputElementsArray(int[] elementsArray)
 {
+
     int length = elementsArray.Length;
-    string prefix = "Массив из " + length + " элементов -> [";
-    string suffix = "]";
-    string comma = ", ";
-
+    string prefix = "Массив из " + length + " элементов -> "; 
     Console.Write(prefix);
-
-    for (int i = 0; i < length; i++) {
-
-        if (i == length - 1) {
-
-            comma = "";
-
-        } 
-
-        Console.Write(elementsArray[i] + comma);
-
-    }
-
-    Console.Write(suffix);
+    Console.WriteLine("[{0}]", string.Join(", ", elementsArray));
 
 }
 
