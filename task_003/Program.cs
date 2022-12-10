@@ -53,6 +53,7 @@ int[] BuildArrayOfUserInputElements(int numberOfElements) {
     int[] numbersArray = new int[numberOfElements];
 
     for (int i = 0; i < numberOfElements; i++) {
+        
         int order = i + 1;
         string userInput = GetUserInputData("Введите " + order + "-е число: ");
 
