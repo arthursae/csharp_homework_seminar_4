@@ -6,8 +6,7 @@
 
 int CalculateSumOfDigits(string userInput) 
 {
-    int numOfDigits = userInput.Length;
-    int[] numbersArray = new int[numOfDigits];
+
     int userInputUInt = Math.Abs(Convert.ToInt32(userInput));
     int sumOfDigits = 0;
     
