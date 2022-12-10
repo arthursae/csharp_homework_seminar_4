@@ -11,7 +11,7 @@ bool IsValidNumber(string stringToCheck)
 
     if (Int32.TryParse(stringToCheck, out x)) {
 
-        int number = int.Parse(stringToCheck);
+        //int number = int.Parse(stringToCheck);
         return true;
 
     }
